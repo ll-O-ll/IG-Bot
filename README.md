@@ -1,12 +1,17 @@
 # IG-Bot V 0.0.0
-Instagram Bot for monitoring account information such as follower count, number of posts, max number of likes, a certain followed user's feed etc. The current version of the bot only supports Chrome users who've linked their Facebook with their Instagram account. Signing in is done through Facebook.
+Instagram Bot for monitoring account information such as follower count, number of posts, max number of likes, a certain followed user's feed etc. The current version of the bot only supports Chrome users who've linked their Facebook with their Instagram account. Therefore, signing into your IG account can only be done through Facebook.
 
 ## Setup
 
-Install python 3.7<
-Install Selenium
-Clone or download and unzip this repository
-
++ Install python 3.7<
++ Download and install Selenium Chrome Webdriver [here](https://chromedriver.chromium.org/getting-started). Choose the right program to install according to your computer's operating system. *Make sure the chromedriver.exe executable file is in your system's and user's **Path** environment variable.*
++ Install Selenium using the following command:
+```cmd
+pip install selenium
+```
++ Clone or download and unzip this repository
++ Enter your Instagram's username or email (if logging in through Facebook) and password in the secrets.txt file. First line must be username and second must be password. Make sure no additional tabs/spaces are added on each line and that characters on both lines are exclusively for the username and password.
++ Run commands and have fun!
 ## Commands
 
 1. Run the main.py script using python built-in interactive method
@@ -26,7 +31,7 @@ Clone or download and unzip this repository
   bot.followers
   ```
 3. A few other useful information can also be obtained such as:
-  The user name (assuming you've logged in using your Facebook account, this info could be different from your login user name):
+  The username (assuming you've logged in using your Facebook account, this info could be different from your login username):
   ```python 
   bot.get_username()
   ```
