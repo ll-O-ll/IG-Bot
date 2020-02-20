@@ -10,7 +10,7 @@ Instagram Bot for monitoring account information such as follower count, number 
 pip install selenium
 ```
 + Clone or download and unzip this repository
-+ Enter your Instagram's username or email (if logging in through Facebook) and password in the secrets.txt file. First line must be username and second must be password. Make sure no additional tabs/spaces are added on each line and that characters on both lines are exclusively for the username and password.
++ Enter your Instagram's username or email (if logging in through Facebook) and password in the [secrets.txt](IG-Bot/secrets.txt) file. First line must be username and second must be password. Make sure no additional tabs/spaces are added on each line and that characters on both lines are exclusively for the username and password.
 + Run commands and have fun!
 ## Commands
 
