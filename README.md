@@ -10,7 +10,9 @@ Clone or download and unzip this repository
 ## Commands
 
 1. Run the main.py script using python built-in interactive method
-  ```python -i main.py```
+  ```python
+  python -i main.py
+  ```
 
 2. When the Selenium Webdriver has loaded Chromium and you're finally logged into your account enter the following command in python's interactive shell
   ```bot.get_follow_info()```
