@@ -10,24 +10,24 @@ Clone or download and unzip this repository
 ## Commands
 
 1. Run the main.py script using python built-in interactive method
-  + python -i main.py
+  ```python -i main.py```
 
 2. When the Selenium Webdriver has loaded Chromium and you're finally logged into your account enter the following command in python's interactive shell
-  + bot.get_follow_info()
+  ```bot.get_follow_info()```
   This command will get all users you follow and all users who follow you. The data is stored in a list. To see this run the following:
-  + bot.following
-  + bot.followers
+  ```bot.following```
+  ```bot.followers```
 3. A few other useful information can also be obtained such as:
   The user name (assuming you've logged in using your Facebook account, this info could be different from your login user name):
-  + bot.get_username()
+  ```bot.get_username()```
   Non-followers (users who you follow but don't follow you back)
-  + bot.get_nonfollowers()
+  ```bot.get_nonfollowers()```
   Non-following users (users who follow you but you don't follow them back)
-  + bot.get_nonfollowing()
+  ```bot.get_nonfollowing()```
   Number of followers:
-  + bot.get_num_followers()
+  ```bot.get_num_followers()```
   Number of following users:
-  + bot.get_num_following()
+  ```bot.get_num_following()```
  
  ## Improvements
  
