@@ -30,6 +30,7 @@ pip install selenium
   ```python
   bot.followers
   ```
+<<<<<<< HEAD
 3. In order to save your user information in an text document invoke the save_user_info() method with the name of the text file you want to save your user information:
     ```python
         bot.save_user_info("{text-file-name}.txt")
@@ -59,6 +60,29 @@ pip install selenium
   ```
 
 
+=======
+3. A few other useful information can also be obtained such as:
+  The username (assuming you've logged in using your Facebook account, this info could be different from your login username):
+  ```python 
+  bot.get_username()
+  ```
+  Non-followers (users who you follow but don't follow you back)
+  ```python
+  bot.get_nonfollowers()
+  ```
+  Non-following users (users who follow you but you don't follow them back)
+  ```python
+  bot.get_nonfollowing()
+  ```
+  Number of followers:
+  ```python
+  bot.get_num_followers()
+  ```
+  Number of following users:
+  ```python
+  bot.get_num_following()
+  ```
+>>>>>>> 95cec26ce758a34cb51f4267322a384990ef592d
  
  ## Improvements
  
@@ -73,3 +97,9 @@ pip install selenium
 - [ ] Go through test cases
 - [ ] Fix any known bugs
   
+<<<<<<< HEAD
+=======
+ 
+
+
+>>>>>>> 95cec26ce758a34cb51f4267322a384990ef592d
