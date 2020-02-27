@@ -1,6 +1,6 @@
 from selenium import webdriver
 from time import sleep
-
+from secrets import username, password
 # version 0.0.1
 # note that sleep times will vary depending on machine/network speeds
 
@@ -24,26 +24,14 @@ class IGBot:
         sleep(4)
 
     def get_username(self):
-        return self.driver.find_element_by_xpath("//a[@class='gmFkV']").text
-    
-    def get_num_followers(self):
-        followers = self.driver.find_element_by_xpath("//a[contains(@href, '/followers/')]")\
-            .text
-        return followers.split(" ")[0]
-
-    def get_num_following(self):
-        following = self.driver.find_element_by_xpath("//a[contains(@href, '/following/')]")\
-            .text
-        return following.split(" ")[0]
+        return self.driver.find_element_by_xpath("//a[@class='gmFkV']").text       
 
     def get_nonfollowers(self):
-        nonfollowers = [user for user in self.following if user not in self.followers]
-        return nonfollowers
+        self.nonfollowers = [user for user in self.following if user not in self.followers]
         
     def get_nonfollowing(self):
-        nonfollowing = [user for user in self.followers if user not in self.following]
-        return nonfollowing
-
+        self.nonfollowing = [user for user in self.followers if user not in self.following]
+        
     def get_follow_info(self):
         # 'suggestions for you' needs to be covered... now it's commented
 
@@ -86,17 +74,37 @@ class IGBot:
         self.followers = [name.text for name in links if name.text != '']
         self.driver.find_element_by_xpath("/html/body/div[4]/div/div[1]/div/div[2]/button")\
             .click()
+        self.get_nonfollowers()
+        self.get_nonfollowing()
+                    
+    def save_user_info(self, output_file):
+        self.driver.find_element_by_xpath("/html/body/div[1]/section/nav/div[2]/div/div/div[1]/a/div").click()
+        with open(output_file, "w", encoding="utf8") as f:
+            f.write(self.get_username() + " profile information summary for today \U0001f603: " + "\n\n")
+            f.write("   Number of followers: " + str(len(self.followers)) + "\n\n")
+            f.write("   Number of users following: "+ str(len(self.following)) + "\n\n")
+
+            f.write("   List of non-followers: " + "\n")
+            for nonfollower in self.nonfollowers:
+                f.write("       " + nonfollower + "\n")
+            f.write("\n")
+            f.write("   List of non-following: " + "\n")
+            for nonfollowing in self.nonfollowing:
+                f.write("       " + nonfollowing + "\n")
+            f.write("\n")
+            f.write("   List of followers: " + "\n")
+            for follower in self.followers:
+                f.write("       " + follower + "\n")
+            f.write("\n")
+            f.write("   List of following: " + "\n")
+            for following in self.following:
+                f.write("       " + following + "\n")
+            f.write("\n\n")
+            f.write("******************************** That's all for now \U0001f642 ********************************")
+        f.close()
 
 if __name__ == '__main__':
-    input_file = "secrets.txt"
-    with open(input_file, "r", encoding="utf8") as f:
-        filecontent = f.readlines()
-        i = 0
-        for line in filecontent:
-            filecontent[i] = line.strip("\n")
-            i += 1
-    f.close()
-    bot = IGBot(filecontent[0], filecontent[1])
+    bot = IGBot(username, password)  
   
 
 
