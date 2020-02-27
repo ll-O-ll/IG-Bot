@@ -32,7 +32,7 @@ pip install selenium
   ```
 3. In order to save your user information in an text document invoke the save_user_info() method with the name of the text file you want to save your user information:
     ```python
-        bot.save_user_info("{text-file-name}.txt")
+    bot.save_user_info("{text-file-name}.txt")
     ```
     This file will have information retrieved from various other methods. Individual info can be obtained also. See step **4**.
 
