@@ -30,7 +30,6 @@ pip install selenium
   ```python
   bot.followers
   ```
-<<<<<<< HEAD
 3. In order to save your user information in an text document invoke the save_user_info() method with the name of the text file you want to save your user information:
     ```python
         bot.save_user_info("{text-file-name}.txt")
