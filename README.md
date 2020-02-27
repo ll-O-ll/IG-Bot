@@ -58,8 +58,6 @@ pip install selenium
   bot.num_following
   ```
 
-
-=======
 3. A few other useful information can also be obtained such as:
   The username (assuming you've logged in using your Facebook account, this info could be different from your login username):
   ```python 
@@ -81,8 +79,7 @@ pip install selenium
   ```python
   bot.get_num_following()
   ```
->>>>>>> 95cec26ce758a34cb51f4267322a384990ef592d
- 
+  
  ## Improvements
  
  This bot could be improved in many ways. For instance, finding a following user's most recent post, obtaining the total number of likes on all your posts, obtaining the total number of comments on all your posts, finding all blocked users, etc.... 
@@ -96,9 +93,3 @@ pip install selenium
 - [ ] Go through test cases
 - [ ] Fix any known bugs
   
-<<<<<<< HEAD
-=======
- 
-
-
->>>>>>> 95cec26ce758a34cb51f4267322a384990ef592d
