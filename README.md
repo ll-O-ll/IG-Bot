@@ -57,28 +57,6 @@ pip install selenium
   ```python
   bot.num_following
   ```
-
-3. A few other useful information can also be obtained such as:
-  The username (assuming you've logged in using your Facebook account, this info could be different from your login username):
-  ```python 
-  bot.get_username()
-  ```
-  Non-followers (users who you follow but don't follow you back)
-  ```python
-  bot.get_nonfollowers()
-  ```
-  Non-following users (users who follow you but you don't follow them back)
-  ```python
-  bot.get_nonfollowing()
-  ```
-  Number of followers:
-  ```python
-  bot.get_num_followers()
-  ```
-  Number of following users:
-  ```python
-  bot.get_num_following()
-  ```
   
  ## Improvements
  
