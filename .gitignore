@@ -1,1 +1,7 @@
 secrets.txt
+debug.log
+desktop.ini
+secrets.py
+output.txt
+__pycache__
+.vscode

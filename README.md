@@ -1,4 +1,4 @@
-# IG-Bot V 0.0.0
+# IG-Bot V 0.1.0
 Instagram Bot for monitoring account information such as follower count, number of posts, max number of likes, a certain followed user's feed etc. The current version of the bot only supports Chrome users who've linked their Facebook with their Instagram account. Therefore, signing into your IG account can only be done through Facebook.
 
 ## Setup
@@ -30,28 +30,34 @@ pip install selenium
   ```python
   bot.followers
   ```
-3. A few other useful information can also be obtained such as:
+3. In order to save your user information in an text document invoke the save_user_info() method with the name of the text file you want to save your user information:
+    ```python
+    bot.save_user_info("{text-file-name}.txt")
+    ```
+    This file will have information retrieved from various other methods. Individual info can be obtained also. See step **4**.
+
+4. A few other useful information can also be obtained such as:
   The username (assuming you've logged in using your Facebook account, this info could be different from your login username):
   ```python 
-  bot.get_username()
+  bot.username
   ```
   Non-followers (users who you follow but don't follow you back)
   ```python
-  bot.get_nonfollowers()
+  bot.nonfollowers
   ```
   Non-following users (users who follow you but you don't follow them back)
   ```python
-  bot.get_nonfollowing()
+  bot.nonfollowing
   ```
   Number of followers:
   ```python
-  bot.get_num_followers()
+  bot.num_followers
   ```
   Number of following users:
   ```python
-  bot.get_num_following()
+  bot.num_following
   ```
- 
+  
  ## Improvements
  
  This bot could be improved in many ways. For instance, finding a following user's most recent post, obtaining the total number of likes on all your posts, obtaining the total number of comments on all your posts, finding all blocked users, etc.... 
@@ -65,6 +71,3 @@ pip install selenium
 - [ ] Go through test cases
 - [ ] Fix any known bugs
   
- 
-
-
