@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 from time import sleep
 from secrets import username, password
 # version 0.0.1
@@ -7,24 +8,27 @@ from secrets import username, password
 class IGBot:
 
     def __init__(self, user, pword):
+        self.username = user
+        self.password = pword
         self.driver = webdriver.Chrome()
         self.driver.get("https://www.instagram.com/")
         sleep(4)
-        self.driver.find_element_by_xpath("//button[contains(text(), 'Log in with Facebook')]").click()
 
         # login with username and password
-        self.driver.find_element_by_xpath("//input[@name='email']")\
+        self.driver.find_element(By.XPATH, "/html/body/div[1]/section/main/article/div[2]/div[1]/div/form/div/div[1]/div/label/input")\
             .send_keys(user)
-        self.driver.find_element_by_xpath("//input[@name='pass']")\
+        self.driver.find_element(By.XPATH, "/html/body/div[1]/section/main/article/div[2]/div[1]/div/form/div/div[2]/div/label/input")\
             .send_keys(pword)
-        self.driver.find_element_by_xpath("//button[@name='login']").click()
         sleep(8)
-        self.driver.find_element_by_xpath("//button[contains(text(), 'Not Now')]").click()
-        self.username = self.get_username()
+        self.driver.find_element(By.XPATH, "/html/body/div[1]/section/main/article/div[2]/div[1]/div/form/div/div[3]").click()
+        sleep(8)
+        self.driver.find_element(By.XPATH, '//*[@id="react-root"]/section/main/div/div/div/div/button').click()
+        sleep(8)
+        self.driver.find_element(By.XPATH, "/html/body/div[5]/div/div/div/div[3]/button[2]").click()
         sleep(4)
 
     def get_username(self):
-        return self.driver.find_element_by_xpath("//a[@class='gmFkV']").text       
+        return self.user
 
     def get_nonfollowers(self):
         self.nonfollowers = [user for user in self.following if user not in self.followers]
@@ -33,15 +37,12 @@ class IGBot:
         self.nonfollowing = [user for user in self.followers if user not in self.following]
         
     def get_follow_info(self):
-        # 'suggestions for you' needs to be covered... now it's commented
 
-        self.driver.find_element_by_xpath("//a[contains(@href, '/{}/')]".format(self.username))\
+        self.driver.find_element_by_xpath("/html/body/div[1]/section/nav/div[2]/div/div/div[3]/div/div[6]/span/img".format(self.username))\
             .click()
         sleep(4)
-        self.driver.find_element_by_xpath("//a[contains(@href, '/following/')]")\
+        self.driver.find_element_by_xpath("/html/body/div[1]/section/nav/div[2]/div/div/div[3]/div/div[6]/div[2]/div[2]/div[2]/a[1]/div/div[2]/div/div/div/div")\
             .click()
-        # sugs = self.driver.find_element_by_xpath('//h4[contains(text(), Suggestions)]')
-        # self.driver.execute_script('argument[0].scrollIntoView()', sugs)
         sleep(4)
         # get following
         scroll_box = self.driver.find_element_by_xpath("/html/body/div[4]/div/div[2]")

@@ -1,0 +1,11 @@
+What data we collect?
+
+Basic User Info:
+
+- Profile Name
+- Profile Picture
+- List of followers
+- List of following
+- Posts/Pictures
+- Bio
+- Links
