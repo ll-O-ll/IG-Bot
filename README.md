@@ -4,8 +4,8 @@ Instagram Bot for monitoring account information such as follower count, number 
 ## Tasks
 
 - [x] Get started on https://developers.facebook.com/docs/instagram-basic-display-api/getting-started
-- [x] Push my initial commits to GitHub
+- [ ] Look into using [Postman](https://web.postman.co/) to perform cURL requests
+- [ ] Use GitHub pages to create the web app [GitHub pages](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages)
 - [ ] Add features as described above
-- [ ] Go through test cases
-- [ ] Fix any known bugs
-  
+- [ ] Go through test cases (described on Postman)
+
